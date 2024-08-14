@@ -10,11 +10,6 @@ const port = 5001;
 
 app.use(cors());  // 追加
 
-app.use((req, res, next) => {
-  res.removeHeader("Content-Security-Policy");
-  next();
-});
-
 const upload = multer({ dest: 'uploads/' });
 
 app.post('/convert', upload.single('srtFile'), (req, res) => {
