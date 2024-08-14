@@ -13,7 +13,7 @@ app.use(cors());  // 追加
 app.use((req, res, next) => {
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';"
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self';"
   );
   next();
 });
