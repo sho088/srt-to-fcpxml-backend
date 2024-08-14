@@ -6,7 +6,7 @@ const fs = require('fs');
 const { generateFcpxml } = require('./utils/fcpxml');
 
 const app = express();
-const port = 5001;
+const port = process.env.PORT || 5001;  // ポート設定を変更
 
 app.use(cors());  // 追加
 
